@@ -182,7 +182,7 @@
   <div class="mb-6 inline-block rounded-lg p-4">
     <h1 class="text-primary mb-4 text-xl font-bold">ResMed Sleep Data</h1>
     <div class="flex flex-row items-start gap-4">
-      <dvi class="flex items-center gap-3">
+      <div class="flex items-center gap-3">
         <label for="preset-range" class="text-primary text-sm font-semibold">Date Range</label>
         <select
           id="preset-range"
@@ -201,7 +201,7 @@
           <option value="allTime">All Days</option>
           <option value="custom">Custom Range →</option>
         </select>
-      </dvi>
+      </div>
       <div class="flex items-center gap-3">
         <label for="start-date" class="text-sm font-medium text-gray-700">Start Date</label>
         <input
