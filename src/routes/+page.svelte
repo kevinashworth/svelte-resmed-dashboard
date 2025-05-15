@@ -1,11 +1,13 @@
 <section class="mx-auto w-full bg-white bg-gradient-to-r p-2 sm:p-6">
   <section class="relative py-6 sm:py-10">
     <div class="mx-auto max-w-screen-md px-4 py-8 sm:py-16 lg:px-6">
-      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">ResMed Sleep Data Dashboard</h2>
+      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+        My <span class="text-accent-600">ResMed <span class="font-normal">my</span>Air</span> Sleep Data Dashboard
+      </h2>
       <p class="mb-6 font-light text-gray-500 md:text-lg">
         This is a simple personal project. I built a web app to view my <span
-          class="font-medium text-amber-600 underline hover:text-amber-700 hover:decoration-2"
-          ><a href="https://myair.resmed.com">myAir</a></span
+          class="text-accent-600 hover:text-accent-700 font-medium underline hover:decoration-2"
+          ><a href="https://myair.resmed.com"><span class="font-normal">my</span>Air</a></span
         >
         data in a new way, hoping to see my data over a variety of timespans. At the same time, I wanted to learn more about
         the latest version of
@@ -16,8 +18,8 @@
 
       <p class="mb-6 font-light text-gray-500 md:text-lg">
         Feel free to use this for yourself. You just need to get your own <span
-          class="font-medium text-amber-600 underline hover:text-amber-700 hover:decoration-2"
-          ><a href="https://myair.resmed.com">myAir</a></span
+          class="text-accent-600 hover:text-accent-700 font-medium underline hover:decoration-2"
+          ><a href="https://myair.resmed.com"><span class="font-normal">my</span>Air</a></span
         >
         data. To do so, copy your data into the
         <code class="text-amber-900">data/monthlySleepRecords</code>
