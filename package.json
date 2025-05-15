@@ -20,7 +20,7 @@
     "layerchart": "0.93.10",
     "prismjs": "1.29.0",
     "svelte-json-tree": "2.2.0",
-    "svelte-ux": "0.90.1",
+    "svelte-ux": "0.90.5",
     "tailwindcss": "4.1.7"
   },
   "devDependencies": {
