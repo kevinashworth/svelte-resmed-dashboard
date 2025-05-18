@@ -233,20 +233,18 @@
     <div>No sleep data available.</div>
   {:else}
     <div class="flex flex-col">
-      <Tabs
-        tabStyle="underline"
-        class="flex-nowrap"
-        activeClasses="border-b-4 border-gray-300 p-4"
-        inactiveClasses="border-b-4 border-transparent p-4"
-        contentClass="rounded-b-lg bg-gray-50 p-4 pt-6"
-      >
+      <Tabs tabStyle="underline" class="flex-nowrap" contentClass="rounded-b-lg bg-gray-50 p-4 pt-6">
         <TabItem
           open={currentTab === "hours"}
           class="me-8 w-32"
-          activeClasses="p-4 border-b-4 border-hours/80"
+          activeClass="p-4 border-b-4 border-hours/80"
+          inactiveClass="border-b-4 border-transparent p-4 hover:border-gray-300"
           onclick={() => handleTabClick("hours")}
         >
-          <MyTabItemTitle slot="title" name="hours" title="Usage Hours" />
+          {#snippet titleSlot()}
+            <MyTabItemTitle name="hours" title="Usage Hours" />
+          {/snippet}
+
           <!-- 1. USAGE HOURS Chart // totalUsage is USAGE HOURS -->
           <div class="m-4">
             <div class="h-[60vh]">
@@ -269,10 +267,13 @@
         <TabItem
           open={currentTab === "leak"}
           class="mx-8 w-32"
-          activeClasses="p-4 border-b-4 border-seal/80"
+          activeClass="p-4 border-b-4 border-seal/80"
+          inactiveClass="border-b-4 border-transparent p-4 hover:border-gray-300"
           onclick={() => handleTabClick("leak")}
         >
-          <MyTabItemTitle slot="title" name="leak" title="Mask Seal" />
+          {#snippet titleSlot()}
+            <MyTabItemTitle name="leak" title="Mask Seal" />
+          {/snippet}
 
           <!-- 2. MASK SEAL Chart // leakPercentile is MASK SEAL // -->
           <div class="m-4">
@@ -338,10 +339,13 @@
         <TabItem
           open={currentTab === "events"}
           class="mx-8 w-32"
-          activeClasses="p-4 border-b-4 border-events/80"
+          activeClass="p-4 border-b-4 border-events/80"
+          inactiveClass="border-b-4 border-transparent p-4 hover:border-gray-300"
           onclick={() => handleTabClick("events")}
         >
-          <MyTabItemTitle slot="title" name="events" title="Events" />
+          {#snippet titleSlot()}
+            <MyTabItemTitle name="events" title="Events" />
+          {/snippet}
 
           <!-- 3. EVENTS Chart // events is EVENTS //   -->
           <div class="m-4">
@@ -366,10 +370,13 @@
         <TabItem
           open={currentTab === "mask"}
           class="mx-8 w-32"
-          activeClasses="p-4 border-b-4 border-mask/80"
+          activeClass="p-4 border-b-4 border-mask/80"
+          inactiveClass="border-b-4 border-transparent p-4 hover:border-gray-300"
           onclick={() => handleTabClick("mask")}
         >
-          <MyTabItemTitle slot="title" name="mask" title="Mask On/Off" />
+          {#snippet titleSlot()}
+            <MyTabItemTitle name="mask" title="Mask On/Off" />
+          {/snippet}
 
           <!-- 4. MASK ON/OFF Chart // maskPairCount is MASK ON/OFF -->
           <div class="m-4">
@@ -394,10 +401,13 @@
         <TabItem
           open={currentTab === "score"}
           class="ms-8 w-32"
-          activeClasses="p-4 border-b-4 border-score/80"
+          activeClass="p-4 border-b-4 border-score/80"
+          inactiveClass="border-b-4 border-transparent p-4 hover:border-gray-300"
           onclick={() => handleTabClick("score")}
         >
-          <MyTabItemTitle slot="title" name="score" title="myAir Score" />
+          {#snippet titleSlot()}
+            <MyTabItemTitle name="score" title="myAir Score" />
+          {/snippet}
 
           <!--5. MYAIR SCORE Chart // sleepScore is MYAIR SCORE -->
           <div class="m-4">
