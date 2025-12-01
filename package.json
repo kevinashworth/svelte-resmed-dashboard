@@ -37,7 +37,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-svelte": "3.11.0",
     "flowbite": "3.1.2",
-    "flowbite-svelte": "1.11.8",
+    "flowbite-svelte": "1.29.1",
     "globals": "16.5.0",
     "prettier": "3.6.2",
     "prettier-plugin-svelte": "3.4.0",
