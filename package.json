@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "1.4.1",
-    "@eslint/js": "9.33.0",
+    "@eslint/js": "9.39.2",
     "@sveltejs/adapter-auto": "6.1.1",
     "@sveltejs/adapter-static": "3.0.10",
     "@sveltejs/kit": "2.49.0",
@@ -33,7 +33,7 @@
     "@types/d3-array": "3.2.2",
     "@types/d3-scale": "4.0.9",
     "@types/prismjs": "1.26.5",
-    "eslint": "9.33.0",
+    "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-svelte": "3.14.0",
     "flowbite": "3.1.2",
