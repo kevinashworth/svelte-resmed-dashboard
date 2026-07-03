@@ -1,3 +1,7 @@
+<script>
+  import { resolve } from "$app/paths";
+</script>
+
 <section class="mx-auto w-full bg-white bg-gradient-to-r p-2 sm:p-6">
   <section class="relative py-6 sm:py-10">
     <div class="mx-auto max-w-screen-md px-4 py-8 sm:py-16 lg:px-6">
@@ -31,7 +35,7 @@
 
       <div class="flex flex-wrap items-center gap-4">
         <a
-          href="/sleep-data"
+          href={resolve("/sleep-data")}
           class="inline-flex items-center justify-center rounded-lg bg-red-700 px-5 py-3 text-center text-base font-semibold text-white focus-within:ring-4 focus-within:ring-red-300 focus-within:outline-none hover:bg-red-800 dark:bg-red-600 dark:focus-within:ring-red-900 dark:hover:bg-red-700"
           role="button">Sleep Data</a
         >

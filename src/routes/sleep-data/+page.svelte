@@ -5,6 +5,7 @@
   import { blur, max } from "d3-array";
   import { Tabs, TabItem } from "flowbite-svelte";
   import { onMount, onDestroy } from "svelte";
+  import { SvelteDate } from "svelte/reactivity";
   import { browser } from "$app/environment";
 
   import type { PageProps } from "./$types";
@@ -57,7 +58,7 @@
   // Initialize and update dates based on preset
   $effect(() => {
     if (startDate === "" && endDate === "" && selectedPreset === "last60") {
-      const sixtyDaysAgo = new Date(data.newestDate);
+      const sixtyDaysAgo = new SvelteDate(data.newestDate);
       sixtyDaysAgo.setDate(data.newestDate.getDate() - 60);
       startDate = sixtyDaysAgo.toISOString().split("T")[0];
       endDate = data.newestDate.toISOString().split("T")[0];
@@ -66,8 +67,8 @@
 
   // Filter data based on selected date range
   const dateFilter = (d: { date: string | number | Date }): boolean => {
-    const date = new Date(d.date);
-    return date >= new Date(startDate) && date <= new Date(endDate);
+    const date = new SvelteDate(d.date);
+    return date >= new SvelteDate(startDate) && date <= new SvelteDate(endDate);
   };
   const filteredData = $derived({
     eventsData: data.eventsData.filter(dateFilter),
@@ -80,38 +81,38 @@
   function handlePresetChange() {
     endDate = data.newestDate.toISOString().split("T")[0];
     if (selectedPreset === "last30") {
-      const thirtyDaysAgo = new Date(data.newestDate);
+      const thirtyDaysAgo = new SvelteDate(data.newestDate);
       thirtyDaysAgo.setDate(data.newestDate.getDate() - 30);
       startDate = thirtyDaysAgo.toISOString().split("T")[0];
     } else if (selectedPreset === "last60") {
-      const sixtyDaysAgo = new Date(data.newestDate);
+      const sixtyDaysAgo = new SvelteDate(data.newestDate);
       sixtyDaysAgo.setDate(data.newestDate.getDate() - 60);
       startDate = sixtyDaysAgo.toISOString().split("T")[0];
     } else if (selectedPreset === "last90") {
-      const ninetyDaysAgo = new Date(data.newestDate);
+      const ninetyDaysAgo = new SvelteDate(data.newestDate);
       ninetyDaysAgo.setDate(data.newestDate.getDate() - 90);
       startDate = ninetyDaysAgo.toISOString().split("T")[0];
     } else if (selectedPreset === "last180") {
-      const oneEightyDaysAgo = new Date(data.newestDate);
+      const oneEightyDaysAgo = new SvelteDate(data.newestDate);
       oneEightyDaysAgo.setDate(data.newestDate.getDate() - 180);
       startDate = oneEightyDaysAgo.toISOString().split("T")[0];
     } else if (selectedPreset === "lastMonth") {
-      const firstDayLastMonth = new Date(data.newestDate.getFullYear(), data.newestDate.getMonth() - 1, 1);
-      const lastDayLastMonth = new Date(data.newestDate.getFullYear(), data.newestDate.getMonth(), 0);
+      const firstDayLastMonth = new SvelteDate(data.newestDate.getFullYear(), data.newestDate.getMonth() - 1, 1);
+      const lastDayLastMonth = new SvelteDate(data.newestDate.getFullYear(), data.newestDate.getMonth(), 0);
       startDate = firstDayLastMonth.toISOString().split("T")[0];
       endDate = lastDayLastMonth.toISOString().split("T")[0];
     } else if (selectedPreset === "lastYear") {
-      const firstDayLastYear = new Date(data.newestDate.getFullYear() - 1, 0, 1);
-      const lastDayLastYear = new Date(data.newestDate.getFullYear(), 0, 0);
+      const firstDayLastYear = new SvelteDate(data.newestDate.getFullYear() - 1, 0, 1);
+      const lastDayLastYear = new SvelteDate(data.newestDate.getFullYear(), 0, 0);
       startDate = firstDayLastYear.toISOString().split("T")[0];
       endDate = lastDayLastYear.toISOString().split("T")[0];
     } else if (selectedPreset === "thisMonth") {
-      const firstDayThisMonth = new Date(data.newestDate.getFullYear(), data.newestDate.getMonth(), 1);
-      const lastDayThisMonth = new Date(data.newestDate.getFullYear(), data.newestDate.getMonth() + 1, 0);
+      const firstDayThisMonth = new SvelteDate(data.newestDate.getFullYear(), data.newestDate.getMonth(), 1);
+      const lastDayThisMonth = new SvelteDate(data.newestDate.getFullYear(), data.newestDate.getMonth() + 1, 0);
       startDate = firstDayThisMonth.toISOString().split("T")[0];
       endDate = lastDayThisMonth.toISOString().split("T")[0];
     } else if (selectedPreset === "thisYear") {
-      const firstDayThisYear = new Date(data.newestDate.getFullYear(), 0, 1);
+      const firstDayThisYear = new SvelteDate(data.newestDate.getFullYear(), 0, 1);
       startDate = firstDayThisYear.toISOString().split("T")[0];
       endDate = data.newestDate.toISOString().split("T")[0];
     } else if (selectedPreset === "allTime") {
