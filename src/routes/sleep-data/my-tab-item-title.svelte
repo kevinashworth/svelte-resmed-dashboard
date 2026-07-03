@@ -15,10 +15,7 @@
 
   let { name = "hours", title = "Usage Hours" }: Props = $props();
 
-  type FillClassMap = {
-    [key: string]: string;
-  };
-  let fillClass: FillClassMap = {
+  const fillClassMap: Record<string, string> = {
     events: "fill-events",
     hours: "fill-hours",
     leak: "fill-seal",
@@ -26,21 +23,20 @@
     score: "fill-score",
   };
 
-  type IconComponentMap = {
-    [key: string]: Component; // Use IconNames as the keys
-  };
-  let iconComponent: IconComponentMap = {
+  const iconComponentMap: Record<string, Component> = {
     events: AhiEventsIcon,
     hours: UsageHoursIcon,
     leak: MaskLeakIcon,
     mask: MaskOnOffIcon,
     score: SleepScoreIcon,
   };
-  let IconComponent = iconComponent[name];
+
+  let fillClass = $derived(fillClassMap[name] ?? "fill-hours");
+  let IconComponent = $derived(iconComponentMap[name] ?? UsageHoursIcon);
 </script>
 
 <div class="flex flex-col items-center justify-start">
-  <IconComponent class={[fillClass[name], "size-12"]} />
+  <IconComponent class={[fillClass, "size-12"]} />
   <h2 class="text-xs font-medium whitespace-nowrap text-gray-500 uppercase">
     {title}
   </h2>
