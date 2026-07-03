@@ -10,17 +10,6 @@ export interface SleepRecord {
   usageScore: number;
 }
 
-export interface PatientWrapper {
-  patient: {
-    id: string;
-    firstName: string;
-    timezoneId: string;
-  };
-  sleepRecords: {
-    items: SleepRecord[];
-  };
-}
-
 export interface ChartData {
   group: string;
   date: Date;

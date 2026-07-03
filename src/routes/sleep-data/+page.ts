@@ -22,7 +22,7 @@ export const load: PageLoad = async ({ fetch }) => {
       }),
     ).finally(() => (loading = false));
 
-    const combinedData = allData.flatMap((monthData) => monthData.data.getPatientWrapper.sleepRecords.items);
+    const combinedData = allData.flatMap((monthData) => monthData);
 
     const oldestDate = new Date(combinedData[0].startDate);
     const newestDate = new Date(combinedData[combinedData.length - 1].startDate);
